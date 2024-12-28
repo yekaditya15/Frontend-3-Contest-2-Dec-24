@@ -1,0 +1,310 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #111315;
+}
+
+.sidebar {
+  width: 260px;
+  background-color: #0c0e10;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 50%;
+}
+
+.sidebar h2 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+}
+
+.sidebar p {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.sidebar nav h3 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.sidebar ul.numbered {
+  list-style: decimal;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.sidebar ul.numbered li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #ddd;
+}
+
+.sidebar ul.numbered li:hover {
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #191d20;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 300px;
+  width: calc(100% - 300px);
+  height: 70px;
+  z-index: 3;
+}
+
+.search-bar {
+  width: 50%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  background-color: #272a30;
+  color: white;
+  margin-right: 20px;
+  margin-left: 30px;
+}
+
+.search-bar:focus {
+  border-color: #d69700;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.sign-in-button,
+.sign-up-button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: #f8b400;
+  width: 176px;
+  height: 36px;
+}
+
+.sign-in-button:hover,
+.sign-up-button:hover {
+  background-color: #d69700;
+}
+
+.navbar-logo {
+  width: 40px;
+  height: auto;
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+.content {
+  margin-left: 320px;
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.menu-heading {
+  color: white;
+  text-align: left;
+  margin-left: 2px;
+}
+
+.menu-card {
+  width: 30%;
+  height: 350px; /* Adjust the height as needed */
+  background-color: #272a30;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 200px; /* Adjust this based on how much space you want for the image */
+  object-fit: cover; /* Ensures the image fills the area while maintaining aspect ratio */
+  border-radius: 10px;
+}
+
+.menu-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.menu-card {
+  width: 30%;
+  height: 290px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.menu-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #fff;
+}
+
+.menu-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #f8b400;
+  margin-bottom: 10px;
+}
+
+.add-to-cart {
+  background-color: #f8b400;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #d69700;
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    left: 0;
+    width: 100%;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  .navbar-logo {
+    width: 35px;
+  }
+
+  .search-bar {
+    width: 40%;
+    margin-left: 10px;
+  }
+
+  .auth-buttons {
+    gap: 10px;
+  }
+
+  .sign-in-button,
+  .sign-up-button {
+    width: 150px;
+  }
+
+  .menu-card {
+    width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  .navbar {
+    left: 0;
+    width: 100%;
+  }
+
+  .menu-card {
+    width: 48%;
+    height: auto;
+  }
+
+  .menu-card img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .menu-card img {
+    height: 180px;
+  }
+
+  .sign-in-button,
+  .sign-up-button {
+    width: 120px;
+  }
+
+  .search-bar {
+    width: 60%;
+  }
+
+  .navbar-logo {
+    width: 30px;
+  }
+}
